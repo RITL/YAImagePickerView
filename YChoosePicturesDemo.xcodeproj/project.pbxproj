@@ -9,12 +9,19 @@
 /* Begin PBXBuildFile section */
 		DB1E31551CABA64F0018EE41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1E31541CABA64F0018EE41 /* main.m */; };
 		DB1E31581CABA64F0018EE41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1E31571CABA64F0018EE41 /* AppDelegate.m */; };
-		DB1E315B1CABA64F0018EE41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1E315A1CABA64F0018EE41 /* ViewController.m */; };
 		DB1E315E1CABA64F0018EE41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1E315C1CABA64F0018EE41 /* Main.storyboard */; };
 		DB1E31601CABA64F0018EE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1E315F1CABA64F0018EE41 /* Assets.xcassets */; };
 		DB1E31631CABA64F0018EE41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1E31611CABA64F0018EE41 /* LaunchScreen.storyboard */; };
-		DB1E316E1CABA64F0018EE41 /* YChoosePicturesDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1E316D1CABA64F0018EE41 /* YChoosePicturesDemoTests.m */; };
-		DB1E31791CABA64F0018EE41 /* YChoosePicturesDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1E31781CABA64F0018EE41 /* YChoosePicturesDemoUITests.m */; };
+		DB1E318B1CABA7140018EE41 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1E318A1CABA7140018EE41 /* AssetsLibrary.framework */; };
+		DB3ADD191CC4AA5700ACC2BC /* YPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3ADD181CC4AA5700ACC2BC /* YPhotoManager.m */; };
+		DB3ADD1F1CC4B0BD00ACC2BC /* ChooseManyPhoto.gif in Resources */ = {isa = PBXBuildFile; fileRef = DB3ADD1E1CC4B0BD00ACC2BC /* ChooseManyPhoto.gif */; };
+		DB3ADD241CC4B23300ACC2BC /* YPhotoBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB3ADD231CC4B23300ACC2BC /* YPhotoBundle.bundle */; };
+		DB5AF5141CC07F8D004EFF8E /* YGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AF5061CC07F8D004EFF8E /* YGroupTableViewCell.m */; };
+		DB5AF5151CC07F8D004EFF8E /* YPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AF5081CC07F8D004EFF8E /* YPhotoCollectionViewCell.m */; };
+		DB5AF5161CC07F8D004EFF8E /* YGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AF50B1CC07F8D004EFF8E /* YGroupTableViewController.m */; };
+		DB5AF5171CC07F8D004EFF8E /* YPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AF50D1CC07F8D004EFF8E /* YPhotoCollectionViewController.m */; };
+		DB5AF5181CC07F8D004EFF8E /* YPhotoNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AF50F1CC07F8D004EFF8E /* YPhotoNavigationController.m */; };
+		DB5AF5201CC0800D004EFF8E /* YMainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AF51F1CC0800D004EFF8E /* YMainCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +46,32 @@
 		DB1E31541CABA64F0018EE41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB1E31561CABA64F0018EE41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB1E31571CABA64F0018EE41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DB1E31591CABA64F0018EE41 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DB1E315A1CABA64F0018EE41 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DB1E315D1CABA64F0018EE41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB1E315F1CABA64F0018EE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB1E31621CABA64F0018EE41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB1E31641CABA64F0018EE41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB1E31691CABA64F0018EE41 /* YChoosePicturesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YChoosePicturesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1E316D1CABA64F0018EE41 /* YChoosePicturesDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YChoosePicturesDemoTests.m; sourceTree = "<group>"; };
-		DB1E316F1CABA64F0018EE41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB1E31741CABA64F0018EE41 /* YChoosePicturesDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YChoosePicturesDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1E31781CABA64F0018EE41 /* YChoosePicturesDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YChoosePicturesDemoUITests.m; sourceTree = "<group>"; };
-		DB1E317A1CABA64F0018EE41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB1E318A1CABA7140018EE41 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		DB3ADD171CC4AA5700ACC2BC /* YPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPhotoManager.h; sourceTree = "<group>"; };
+		DB3ADD181CC4AA5700ACC2BC /* YPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPhotoManager.m; sourceTree = "<group>"; };
+		DB3ADD1E1CC4B0BD00ACC2BC /* ChooseManyPhoto.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ChooseManyPhoto.gif; sourceTree = "<group>"; };
+		DB3ADD231CC4B23300ACC2BC /* YPhotoBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YPhotoBundle.bundle; sourceTree = "<group>"; };
+		DB5AF5051CC07F8D004EFF8E /* YGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGroupTableViewCell.h; sourceTree = "<group>"; };
+		DB5AF5061CC07F8D004EFF8E /* YGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGroupTableViewCell.m; sourceTree = "<group>"; };
+		DB5AF5071CC07F8D004EFF8E /* YPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		DB5AF5081CC07F8D004EFF8E /* YPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		DB5AF50A1CC07F8D004EFF8E /* YGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGroupTableViewController.h; sourceTree = "<group>"; };
+		DB5AF50B1CC07F8D004EFF8E /* YGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGroupTableViewController.m; sourceTree = "<group>"; };
+		DB5AF50C1CC07F8D004EFF8E /* YPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPhotoCollectionViewController.h; sourceTree = "<group>"; };
+		DB5AF50D1CC07F8D004EFF8E /* YPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPhotoCollectionViewController.m; sourceTree = "<group>"; };
+		DB5AF50E1CC07F8D004EFF8E /* YPhotoNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPhotoNavigationController.h; sourceTree = "<group>"; };
+		DB5AF50F1CC07F8D004EFF8E /* YPhotoNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPhotoNavigationController.m; sourceTree = "<group>"; };
+		DB5AF51E1CC0800D004EFF8E /* YMainCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMainCollectionViewController.h; sourceTree = "<group>"; };
+		DB5AF51F1CC0800D004EFF8E /* YMainCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMainCollectionViewController.m; sourceTree = "<group>"; };
+		DB5AF5231CC083C5004EFF8E /* YEnumConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YEnumConfig.h; sourceTree = "<group>"; };
+		DB5AF5341CC08E7E004EFF8E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		DB5AF5351CC08E7E004EFF8E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1E318B1CABA7140018EE41 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,9 +103,8 @@
 		DB1E31471CABA64F0018EE41 = {
 			isa = PBXGroup;
 			children = (
+				DB1E318A1CABA7140018EE41 /* AssetsLibrary.framework */,
 				DB1E31521CABA64F0018EE41 /* YChoosePicturesDemo */,
-				DB1E316C1CABA64F0018EE41 /* YChoosePicturesDemoTests */,
-				DB1E31771CABA64F0018EE41 /* YChoosePicturesDemoUITests */,
 				DB1E31511CABA64F0018EE41 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,10 +122,9 @@
 		DB1E31521CABA64F0018EE41 /* YChoosePicturesDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DB5AF4ED1CC07F5A004EFF8E /* Files */,
 				DB1E31561CABA64F0018EE41 /* AppDelegate.h */,
 				DB1E31571CABA64F0018EE41 /* AppDelegate.m */,
-				DB1E31591CABA64F0018EE41 /* ViewController.h */,
-				DB1E315A1CABA64F0018EE41 /* ViewController.m */,
 				DB1E315C1CABA64F0018EE41 /* Main.storyboard */,
 				DB1E315F1CABA64F0018EE41 /* Assets.xcassets */,
 				DB1E31611CABA64F0018EE41 /* LaunchScreen.storyboard */,
@@ -122,22 +142,92 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DB1E316C1CABA64F0018EE41 /* YChoosePicturesDemoTests */ = {
+		DB3ADD161CC4AA5700ACC2BC /* YPhotoManager */ = {
 			isa = PBXGroup;
 			children = (
-				DB1E316D1CABA64F0018EE41 /* YChoosePicturesDemoTests.m */,
-				DB1E316F1CABA64F0018EE41 /* Info.plist */,
+				DB3ADD171CC4AA5700ACC2BC /* YPhotoManager.h */,
+				DB3ADD181CC4AA5700ACC2BC /* YPhotoManager.m */,
 			);
-			path = YChoosePicturesDemoTests;
+			path = YPhotoManager;
 			sourceTree = "<group>";
 		};
-		DB1E31771CABA64F0018EE41 /* YChoosePicturesDemoUITests */ = {
+		DB3ADD1D1CC4B0BD00ACC2BC /* APreViewImage */ = {
 			isa = PBXGroup;
 			children = (
-				DB1E31781CABA64F0018EE41 /* YChoosePicturesDemoUITests.m */,
-				DB1E317A1CABA64F0018EE41 /* Info.plist */,
+				DB3ADD1E1CC4B0BD00ACC2BC /* ChooseManyPhoto.gif */,
 			);
-			path = YChoosePicturesDemoUITests;
+			path = APreViewImage;
+			sourceTree = "<group>";
+		};
+		DB3ADD221CC4B23300ACC2BC /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				DB3ADD231CC4B23300ACC2BC /* YPhotoBundle.bundle */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		DB5AF4ED1CC07F5A004EFF8E /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB5AF5031CC07F8D004EFF8E /* MainFiles */,
+				DB5AF5131CC07F8D004EFF8E /* TestViewController */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		DB5AF5031CC07F8D004EFF8E /* MainFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DB3ADD221CC4B23300ACC2BC /* Image */,
+				DB3ADD1D1CC4B0BD00ACC2BC /* APreViewImage */,
+				DB5AF5221CC083C5004EFF8E /* EnumConfig */,
+				DB3ADD161CC4AA5700ACC2BC /* YPhotoManager */,
+				DB5AF5041CC07F8D004EFF8E /* Cell */,
+				DB5AF5091CC07F8D004EFF8E /* ViewController */,
+			);
+			path = MainFiles;
+			sourceTree = "<group>";
+		};
+		DB5AF5041CC07F8D004EFF8E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DB5AF5051CC07F8D004EFF8E /* YGroupTableViewCell.h */,
+				DB5AF5061CC07F8D004EFF8E /* YGroupTableViewCell.m */,
+				DB5AF5071CC07F8D004EFF8E /* YPhotoCollectionViewCell.h */,
+				DB5AF5081CC07F8D004EFF8E /* YPhotoCollectionViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DB5AF5091CC07F8D004EFF8E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB5AF50A1CC07F8D004EFF8E /* YGroupTableViewController.h */,
+				DB5AF50B1CC07F8D004EFF8E /* YGroupTableViewController.m */,
+				DB5AF50C1CC07F8D004EFF8E /* YPhotoCollectionViewController.h */,
+				DB5AF50D1CC07F8D004EFF8E /* YPhotoCollectionViewController.m */,
+				DB5AF50E1CC07F8D004EFF8E /* YPhotoNavigationController.h */,
+				DB5AF50F1CC07F8D004EFF8E /* YPhotoNavigationController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DB5AF5131CC07F8D004EFF8E /* TestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB5AF51E1CC0800D004EFF8E /* YMainCollectionViewController.h */,
+				DB5AF51F1CC0800D004EFF8E /* YMainCollectionViewController.m */,
+			);
+			path = TestViewController;
+			sourceTree = "<group>";
+		};
+		DB5AF5221CC083C5004EFF8E /* EnumConfig */ = {
+			isa = PBXGroup;
+			children = (
+				DB5AF5231CC083C5004EFF8E /* YEnumConfig.h */,
+			);
+			path = EnumConfig;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,11 +292,13 @@
 		DB1E31481CABA64F0018EE41 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = Y;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = YueWen;
 				TargetAttributes = {
 					DB1E314F1CABA64F0018EE41 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8S4NWFZC5J;
 					};
 					DB1E31681CABA64F0018EE41 = {
 						CreatedOnToolsVersion = 7.3;
@@ -225,6 +317,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = DB1E31471CABA64F0018EE41;
 			productRefGroup = DB1E31511CABA64F0018EE41 /* Products */;
@@ -245,6 +338,8 @@
 			files = (
 				DB1E31631CABA64F0018EE41 /* LaunchScreen.storyboard in Resources */,
 				DB1E31601CABA64F0018EE41 /* Assets.xcassets in Resources */,
+				DB3ADD241CC4B23300ACC2BC /* YPhotoBundle.bundle in Resources */,
+				DB3ADD1F1CC4B0BD00ACC2BC /* ChooseManyPhoto.gif in Resources */,
 				DB1E315E1CABA64F0018EE41 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,9 +365,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1E315B1CABA64F0018EE41 /* ViewController.m in Sources */,
+				DB5AF5161CC07F8D004EFF8E /* YGroupTableViewController.m in Sources */,
+				DB5AF5181CC07F8D004EFF8E /* YPhotoNavigationController.m in Sources */,
+				DB5AF5141CC07F8D004EFF8E /* YGroupTableViewCell.m in Sources */,
+				DB3ADD191CC4AA5700ACC2BC /* YPhotoManager.m in Sources */,
+				DB5AF5171CC07F8D004EFF8E /* YPhotoCollectionViewController.m in Sources */,
 				DB1E31581CABA64F0018EE41 /* AppDelegate.m in Sources */,
+				DB5AF5201CC0800D004EFF8E /* YMainCollectionViewController.m in Sources */,
 				DB1E31551CABA64F0018EE41 /* main.m in Sources */,
+				DB5AF5151CC07F8D004EFF8E /* YPhotoCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +381,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1E316E1CABA64F0018EE41 /* YChoosePicturesDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +388,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1E31791CABA64F0018EE41 /* YChoosePicturesDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +411,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DB1E315D1CABA64F0018EE41 /* Base */,
+				DB5AF5341CC08E7E004EFF8E /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -320,6 +420,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DB1E31621CABA64F0018EE41 /* Base */,
+				DB5AF5351CC08E7E004EFF8E /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -345,6 +446,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -413,10 +515,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = YChoosePicturesDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.YChoosePicturesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,10 +530,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = YChoosePicturesDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.YChoosePicturesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -496,6 +606,7 @@
 				DB1E317F1CABA64F0018EE41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB1E31801CABA64F0018EE41 /* Build configuration list for PBXNativeTarget "YChoosePicturesDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +615,7 @@
 				DB1E31821CABA64F0018EE41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB1E31831CABA64F0018EE41 /* Build configuration list for PBXNativeTarget "YChoosePicturesDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +624,7 @@
 				DB1E31851CABA64F0018EE41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
