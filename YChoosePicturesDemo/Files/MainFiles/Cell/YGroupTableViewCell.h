@@ -14,19 +14,19 @@
 /**
  *  显示略图的图像视图
  */
-@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (strong, nonatomic) UIImageView *headImageView;
 
 
 /**
  *  显示姓名标签
  */
-@property (weak, nonatomic) IBOutlet UILabel *lblName;
+@property (strong, nonatomic) UILabel *lblName;
 
 
 /**
  *  显示图片的数量
  */
-@property (weak, nonatomic) IBOutlet UILabel *lblNumber;
+@property (strong, nonatomic) UILabel *lblNumber;
 
 
 

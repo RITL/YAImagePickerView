@@ -27,6 +27,9 @@ static NSString * const reuseIdentifier = @"Cell";
     self.size = (self.view.bounds.size.width - 3) / 4.0f;
     self.images = @[];
     
+    //注册cell
+    [self.collectionView registerClass:[YPhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +60,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Configure the cell
     cell.photoImageView.image = self.images[indexPath.item];
+    [cell hiddenSelectdImage];
     
     return cell;
 }

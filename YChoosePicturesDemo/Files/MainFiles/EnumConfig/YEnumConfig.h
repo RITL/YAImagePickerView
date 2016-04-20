@@ -35,4 +35,8 @@ typedef void(^ALAssetPhotoBlock)(NSArray <ALAsset *> * photos);
 typedef void(^ALAssetFailBlock)(NSString * error);
 
 
+#pragma mark - YPhotoCollectionViewCell
+typedef void(^YPhotoCollectionViewBlock)(void);
+
+
 #endif /* YEnumConfig_h */

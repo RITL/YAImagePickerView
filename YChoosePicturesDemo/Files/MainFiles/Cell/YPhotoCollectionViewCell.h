@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YEnumConfig.h"
 
 @interface YPhotoCollectionViewCell : UICollectionViewCell
 
 /**
- *  展示照片的CollectionViewCell
+ *  展示图片的按钮
  */
-@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
-
+@property (strong, nonatomic)UIImageView * photoImageView;
 
 
 /**
@@ -35,6 +35,23 @@
 - (void)didDeSelected;
 
 
+
+/**
+ *  被选中执行的回调
+ *
+ *  @param chooseTapBlockHandle 执行的代码块
+ */
+- (void)choosedImageDidTap:(YPhotoCollectionViewBlock)chooseTapBlockHandle;
+
+
+
+
+/**
+ *  撤销选中执行的回调
+ *
+ *  @param disChooseTapBlockHandle 执行的代码块
+ */
+- (void)disChoosedImageDidTap:(YPhotoCollectionViewBlock)disChooseTapBlockHandle;
 
 
 @end

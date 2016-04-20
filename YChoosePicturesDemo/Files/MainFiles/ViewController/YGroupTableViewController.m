@@ -22,7 +22,12 @@
 
 @end
 
+
+
 @implementation YGroupTableViewController
+
+static NSString * const reuseIdentifier = @"YGroupTableViewCell";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +40,12 @@
 
     //初始化单例
     self.photoManager = [YPhotoManager shareInstance];
+    
+    //注册cell
+    [self.tableView registerClass:[YGroupTableViewCell class] forCellReuseIdentifier:reuseIdentifier];
+    
+    //设置自定高度
+    self.tableView.rowHeight = 80;
     
     //开始加载数据
     [self requestPhotoGroup];
@@ -104,7 +115,7 @@
     //获得当前的数据
     ALAssetsGroup * group = self.groups[indexPath.row];
     
-    YGroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([YGroupTableViewCell class]) forIndexPath:indexPath];
+    YGroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     
     //获得当前的预览图
@@ -163,11 +174,11 @@
  */
 - (void)pushCollectionViewController:(ALAssetsGroup *)group animated:(BOOL)animated
 {
-    //获得当前StoryBoard
-    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    //初始化布局对象
+    UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc] init];
     
     //获取当前控制器
-    YPhotoCollectionViewController * photoCollectionController = (YPhotoCollectionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"photoCollectionController"];
+    YPhotoCollectionViewController * photoCollectionController = [[YPhotoCollectionViewController alloc]initWithCollectionViewLayout:flowLayout];
     
     //传递
     [photoCollectionController setValue:group forKey:@"group"];

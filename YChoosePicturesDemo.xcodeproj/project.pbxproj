@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB048C5C1CC5FA7E00D603B9 /* YPhotoBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB048C5B1CC5FA7E00D603B9 /* YPhotoBrowseViewController.m */; };
 		DB1E31551CABA64F0018EE41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1E31541CABA64F0018EE41 /* main.m */; };
 		DB1E31581CABA64F0018EE41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1E31571CABA64F0018EE41 /* AppDelegate.m */; };
 		DB1E315E1CABA64F0018EE41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1E315C1CABA64F0018EE41 /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB048C5A1CC5FA7E00D603B9 /* YPhotoBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPhotoBrowseViewController.h; sourceTree = "<group>"; };
+		DB048C5B1CC5FA7E00D603B9 /* YPhotoBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPhotoBrowseViewController.m; sourceTree = "<group>"; };
 		DB1E31501CABA64F0018EE41 /* YChoosePicturesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YChoosePicturesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1E31541CABA64F0018EE41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB1E31561CABA64F0018EE41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				DB5AF50D1CC07F8D004EFF8E /* YPhotoCollectionViewController.m */,
 				DB5AF50E1CC07F8D004EFF8E /* YPhotoNavigationController.h */,
 				DB5AF50F1CC07F8D004EFF8E /* YPhotoNavigationController.m */,
+				DB048C5A1CC5FA7E00D603B9 /* YPhotoBrowseViewController.h */,
+				DB048C5B1CC5FA7E00D603B9 /* YPhotoBrowseViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB5AF5161CC07F8D004EFF8E /* YGroupTableViewController.m in Sources */,
+				DB048C5C1CC5FA7E00D603B9 /* YPhotoBrowseViewController.m in Sources */,
 				DB5AF5181CC07F8D004EFF8E /* YPhotoNavigationController.m in Sources */,
 				DB5AF5141CC07F8D004EFF8E /* YGroupTableViewCell.m in Sources */,
 				DB3ADD191CC4AA5700ACC2BC /* YPhotoManager.m in Sources */,

@@ -228,6 +228,7 @@
 //获取所有的照片对象
 - (void)photosInGroups:(ALAssetsGroup *)group Block:(ALAssetPhotoBlock)photoBlock
 {
+    
     //开始读取
     [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
         
@@ -238,17 +239,13 @@
             //添加数据
             [self.photos addObject:result];
             
-            
             if (index == group.numberOfAssets - 1)
             {
-                //主线程开始添加并回调
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    //回调
-                    photoBlock([NSArray arrayWithArray:self.photos]);
-                    
-                });
+                //回调
+                photoBlock([NSArray arrayWithArray:self.photos]);
+                
             }
+
         }
     }];
 }

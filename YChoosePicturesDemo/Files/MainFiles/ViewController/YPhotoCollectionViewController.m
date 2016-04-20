@@ -7,6 +7,7 @@
 //
 
 #import "YPhotoCollectionViewController.h"
+#import "YPhotoBrowseViewController.h"
 #import "YPhotoCollectionViewCell.h"
 #import "YPhotoManager.h"
 @import AssetsLibrary;
@@ -48,11 +49,15 @@ static NSString * const reuseIdentifier = @"YPhotoCollectionViewCell";
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(choosedImage)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
-    //开始加载图片信息
-    [self loadPhotos];
-    
     //设置collection
     self.collectionView.allowsMultipleSelection = true;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    
+    //注册cell
+    [self.collectionView registerClass:[YPhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    
+    //开始加载图片信息
+    [self loadPhotos];
 
 }
 
@@ -65,10 +70,10 @@ static NSString * const reuseIdentifier = @"YPhotoCollectionViewCell";
     [[YPhotoManager shareInstance] openPhotosGroup:self.group Success:^(NSArray<ALAsset *> *photos) {
         
         self.photos = [NSMutableArray arrayWithArray:photos];
-        
+
         //初始化存放图片的数组
         [self loadAllImages];
-        
+            
         //初始化标志位数组
         [self loadSignImages:self.photos.count];
 
@@ -111,7 +116,6 @@ static NSString * const reuseIdentifier = @"YPhotoCollectionViewCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-//    return self.allImages.count;
     return  self.photos.count;
 }
 
@@ -123,11 +127,36 @@ static NSString * const reuseIdentifier = @"YPhotoCollectionViewCell";
     //检测cell
     [self checkCellDidSelect:cell Number:self.imagesSign[indexPath.item]];
     
-    /*如果处理图像，请在此处*/
-    /***************此类库一般会选择用第三方裁剪*********************/
-    /*iOS9.0以后太模糊尺寸为75 * 75   iOS8及以下为150 * 150*/
-    //    cell.photoImageView.image = self.allImages[indexPath.item];
+    //这里尽量不用thumbnail属性，因为太模糊了，可以用aspectRatioThumbnail比例缩略图代替
     cell.photoImageView.image = [UIImage imageWithCGImage:self.photos[indexPath.item].aspectRatioThumbnail];
+    
+    //初始化回调
+    [cell choosedImageDidTap:^{
+        
+        [self switchPhotoHandle:^{
+            //添加图片
+            [_choosedImages addObject:self.allImages[indexPath.item]];
+            [self.imagesSign replaceObjectAtIndex:indexPath.item withObject:[NSNumber numberWithBool:true]];
+    
+        } DateHandle:^{
+            //修改标志位
+            [self.imagesSign replaceObjectAtIndex:indexPath.item withObject:[NSNumber numberWithBool:true]];
+        }];
+    }];
+    
+    
+    [cell disChoosedImageDidTap:^{
+        
+        [self switchPhotoHandle:^{
+            //删除图片
+            [_choosedImages removeObject:self.allImages[indexPath.item]];
+            [self.imagesSign replaceObjectAtIndex:indexPath.item withObject:[NSNumber numberWithBool:false]];
+    
+        } DateHandle:^{
+            //修改标志位
+            [self.imagesSign replaceObjectAtIndex:indexPath.item withObject:[NSNumber numberWithBool:false]];
+        }];
+    }];
     
     return cell;
 }
@@ -166,41 +195,19 @@ static NSString * const reuseIdentifier = @"YPhotoCollectionViewCell";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //获得Cell
-    YPhotoCollectionViewCell * cell = (YPhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    //获取当前的资源对象
+    ALAsset * asset = self.photos[indexPath.item];
     
-    [self switchPhotoHandle:^{
-        //添加图片
-        [_choosedImages addObject:self.allImages[indexPath.item]];
-        
-    } DateHandle:^{
-        //修改标志位
-        [self.imagesSign replaceObjectAtIndex:indexPath.item withObject:[NSNumber numberWithBool:true]];
-    }];
+    //创建浏览控制器
+    YPhotoBrowseViewController * browerViewController = [[YPhotoBrowseViewController alloc] init];
+    
+    //设置初始值
+    browerViewController.currentAsset = asset;
+    
+    //弹出
+    [self.navigationController pushViewController:browerViewController animated:true];
 
-    
-    //表示选中
-    [cell didSelected];
 }
-
--(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    //获得Cell
-    YPhotoCollectionViewCell * cell = (YPhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-
-    [self switchPhotoHandle:^{
-        //删除图片
-        [_choosedImages removeObject:self.allImages[indexPath.item]];
-        
-    } DateHandle:^{
-        //修改标志位
-        [self.imagesSign replaceObjectAtIndex:indexPath.item withObject:[NSNumber numberWithBool:false]];
-    }];
-    
-    //表示不选
-    [cell didDeSelected];
-}
-
 
 
 #pragma mark - <UICollectionViewDelegateFlowLayout>
