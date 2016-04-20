@@ -7,7 +7,6 @@
 //
 
 #import "YPhotoManager.h"
-@import PhotosUI;
 
 
 @interface YPhotoManager ()
@@ -93,35 +92,42 @@
  *
  *  @param title 组名
  */
-//- (void)createGroupWithTitle:(NSString *)title
-//{
-//    //开始创建
-//    [self.library addAssetsGroupAlbumWithName:title resultBlock:^(ALAssetsGroup *group) {
-//        
-//        NSLog(@"创建成功!");
-//        
-//    } failureBlock:^(NSError *error) {
-//        
-//        NSLog(@"error = %@",error.localizedDescription);
-//        
-//    }];
-//}
+- (void)createGroupWithTitle:(NSString *)title
+{
+    //开始创建
+    [self.library addAssetsGroupAlbumWithName:title resultBlock:^(ALAssetsGroup *group) {
+        
+        NSLog(@"创建成功!");
+        
+    } failureBlock:^(NSError *error) {
+        
+        NSLog(@"error = %@",error.localizedDescription);
+        
+    }];
+}
 
 
 
 
-//    ALAssetsGroupLibrary  从iTunes 来的相册内容（如本身自带的向日葵照片）
-//    ALAssetsGroupAlbum    设备自身产生或从iTunes同步来的照片，但是不包括照片流跟分享流中的照片。(例如从各个软件中保存下来的图片)
-//    ALAssetsGroupEvent    相机接口事件产生的相册
-//    ALAssetsGroupFaces    脸部相册（具体不清楚）
-//    ALAssetsGroupSavedPhotos  "相册胶卷"里面的照片
-//    ALAssetsGroupPhotoStream  照片流
-//    ALAssetsGroupAll        除了ALAssetsGroupLibrary上面所的内容
+//ALAssetsGroupLibrary        //从iTunes 来的相册内容（如本身自带的向日葵照片）
+//ALAssetsGroupAlbum          //设备自身产生或从iTunes同步来的照片，但是不包括照片流跟分享流中的照片。(例如从各个软件中保存下来的图片)
+//ALAssetsGroupEvent          //相机接口事件产生的相册
+//ALAssetsGroupFaces          //脸部相册（具体不清楚）
+//ALAssetsGroupSavedPhotos    //"相册胶卷"里面的照片
+//ALAssetsGroupPhotoStream    //照片流
+//ALAssetsGroupAll            //除了ALAssetsGroupLibrary上面所的内容
 
 
 
 
 #pragma mark - 读取相册的所有组
+
+/**
+ *  读取相册的所有组
+ *
+ *  @param groupBlock 获取组成功的回调
+ *  @param failBlock  失败的回调
+ */
 - (void)readAllPhotoGroups:(ALAssetGroupBlock)groupBlock Fail:(ALAssetFailBlock)failBlock
 {
    [self readAllPhotoGroups:groupBlock Fail:failBlock CameraRollHandel:^{}];
@@ -129,13 +135,19 @@
 }
 
 
+/**
+ *  读取相册的所有组
+ *
+ *  @param groupBlock       获取组成功的回调
+ *  @param failBlock        失败的回调
+ *  @param cameraRollHandle 相机胶卷不为nil时候进行的回调
+ */
 -(void)readAllPhotoGroups:(ALAssetGroupBlock)groupBlock Fail:(ALAssetFailBlock)failBlock CameraRollHandel:(void (^)(void))cameraRollHandle
 {
     //删除之前存的所有组
     [self.groups removeAllObjects];
     
     __block __weak typeof(self) copy_self = self;
-    
     
     //开始遍历
     [self.library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
@@ -239,6 +251,7 @@
             //添加数据
             [self.photos addObject:result];
             
+            //数目达标后统一进行回调
             if (index == group.numberOfAssets - 1)
             {
                 //回调
